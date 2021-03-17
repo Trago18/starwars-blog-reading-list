@@ -8,12 +8,12 @@ export const Navbar = () => {
 
 	// href={`/${value[2]}/${value[1]}`}
 
-	let arr = Object.values(store.favorites);
+	let arr = store.favorites;
 	let loop = arr.map((value, index) => {
 		return (
 			<li key={index}>
 				<a className="dropdown-item" href="#">
-					{value[0]} <i onClick={() => actions.removeFavorite(value)} className="fas fa-trash"></i>
+					{value} <i onClick={() => actions.removeFavorite(value)} className="fas fa-trash"></i>
 				</a>
 			</li>
 		);
