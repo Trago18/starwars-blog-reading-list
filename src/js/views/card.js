@@ -32,8 +32,8 @@ export const Card = ({ character, planet, selector, id }) => {
 					<button
 						onClick={() =>
 							selector == "character"
-								? actions.addFavorite(character.name, id, selector)
-								: actions.addFavorite(planet.name, id, selector)
+								? actions.addFavorite(character.name)
+								: actions.addFavorite(planet.name)
 						}
 						type="button"
 						className="btn btn-outline-warning float-end">

@@ -34,12 +34,16 @@ export const Planet = () => {
 					<div className="col">Diameter</div>
 				</div>
 				<div className="row text-danger text-center">
-					<div className="col">{store.planets.length == 10 && store.planets[params.id].name}</div>
-					<div className="col">{store.planets.length == 10 && store.planets[params.id].climate}</div>
-					<div className="col">{store.planets.length == 10 && store.planets[params.id].population}</div>
-					<div className="col">{store.planets.length == 10 && store.planets[params.id].orbital_period}</div>
-					<div className="col">{store.planets.length == 10 && store.planets[params.id].rotation_period}</div>
-					<div className="col">{store.planets.length == 10 && store.planets[params.id].diameter}</div>
+					{store.characters.length == 10 && (
+						<>
+							<div className="col">{store.planets[params.id].name}</div>
+							<div className="col">{store.planets[params.id].climate}</div>
+							<div className="col">{store.planets[params.id].population}</div>
+							<div className="col">{store.planets[params.id].rotation_period}</div>
+							<div className="col">{store.planets[params.id].orbital_period}</div>
+							<div className="col">{store.planets[params.id].diameter}</div>
+						</>
+					)}
 				</div>
 			</div>
 		</div>

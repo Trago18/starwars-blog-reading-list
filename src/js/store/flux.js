@@ -9,7 +9,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			addFavorite: (fav, id, selector) => {
 				if (getStore().favorites.includes(fav)) {
 				} else {
-					setStore({ favorites: [...getStore().favorites, [fav, id, selector]] });
+					setStore({ favorites: [...getStore().favorites, fav] });
 				}
 			},
 			removeFavorite: fav => {

@@ -37,12 +37,16 @@ export const Character = () => {
 					<div className="col">Eye Color</div>
 				</div>
 				<div className="row text-danger text-center">
-					<div className="col">{store.characters.length == 10 && store.characters[params.id].name}</div>
-					<div className="col">{store.characters.length == 10 && store.characters[params.id].birth_year}</div>
-					<div className="col">{store.characters.length == 10 && store.characters[params.id].gender}</div>
-					<div className="col">{store.characters.length == 10 && store.characters[params.id].height}</div>
-					<div className="col">{store.characters.length == 10 && store.characters[params.id].skin_color}</div>
-					<div className="col">{store.characters.length == 10 && store.characters[params.id].eye_color}</div>
+					{store.characters.length == 10 && (
+						<>
+							<div className="col">{store.characters[params.id].name}</div>
+							<div className="col">{store.characters[params.id].birth_year}</div>
+							<div className="col">{store.characters[params.id].gender}</div>
+							<div className="col">{store.characters[params.id].height}</div>
+							<div className="col">{store.characters[params.id].skin_color}</div>
+							<div className="col">{store.characters[params.id].eye_color}</div>
+						</>
+					)}
 				</div>
 			</div>
 		</div>
