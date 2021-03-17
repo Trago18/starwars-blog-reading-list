@@ -6,7 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planets: []
 		},
 		actions: {
-			addFavorite: (fav, id, selector) => {
+			addFavorite: fav => {
 				if (getStore().favorites.includes(fav)) {
 				} else {
 					setStore({ favorites: [...getStore().favorites, fav] });
