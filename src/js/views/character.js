@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 export const Character = () => {
 	const { store, actions } = useContext(Context);
-	const params = useParams();
+	const { id } = useParams();
 
 	return (
 		<div className="container">
@@ -15,7 +15,7 @@ export const Character = () => {
 				<div className="col-md-6">
 					<div className="card-body text-center">
 						<h1 className="card-title">
-							{store.characters.length == 10 && store.characters[params.id].name}
+							{store.characters.length == 10 && store.characters[id].name}
 						</h1>
 						<p className="card-text h5">
 							Sed ut perspiciatis unde omnis iste natus error sit voliptatem accusantium doloremque
@@ -39,12 +39,12 @@ export const Character = () => {
 				<div className="row text-danger text-center">
 					{store.characters.length == 10 && (
 						<>
-							<div className="col">{store.characters[params.id].name}</div>
-							<div className="col">{store.characters[params.id].birth_year}</div>
-							<div className="col">{store.characters[params.id].gender}</div>
-							<div className="col">{store.characters[params.id].height}</div>
-							<div className="col">{store.characters[params.id].skin_color}</div>
-							<div className="col">{store.characters[params.id].eye_color}</div>
+							<div className="col">{store.characters[id].name}</div>
+							<div className="col">{store.characters[id].birth_year}</div>
+							<div className="col">{store.characters[id].gender}</div>
+							<div className="col">{store.characters[id].height}</div>
+							<div className="col">{store.characters[id].skin_color}</div>
+							<div className="col">{store.characters[id].eye_color}</div>
 						</>
 					)}
 				</div>
