@@ -29,20 +29,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const newSel = getStore().favorites.sel.filter((value, index) => {
 					return index !== id;
 				});
-				//console.log(newFav);
 				setStore({ favorites: { name: newFav, id: newId, sel: newSel } });
 			},
 			loadData: () => {
 				fetch(`https://swapi.dev/api/people/`)
 					.then(res1 => res1.json())
 					.then(data1 => {
-						//console.log(data1);
 						setStore({ characters: data1.results });
 					});
 				fetch(`https://swapi.dev/api/planets/`)
 					.then(res2 => res2.json())
 					.then(data2 => {
-						//console.log(data2);
 						setStore({ planets: data2.results });
 					});
 			}

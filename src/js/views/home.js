@@ -14,7 +14,6 @@ export const Home = () => {
 			</div>
 			<div className="row mt-3 characters">
 				{store.characters.map((value, index) => {
-					//console.log(value);
 					return <Card key={index} id={index} character={value} selector="character" />;
 				})}
 			</div>
@@ -25,7 +24,6 @@ export const Home = () => {
 			</div>
 			<div className="row mt-3 planets">
 				{store.planets.map((value, index) => {
-					//console.log(value);
 					return <Card key={index} id={index} planet={value} selector="planet" />;
 				})}
 			</div>
