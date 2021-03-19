@@ -30,14 +30,14 @@ export const Card = ({ character, planet, selector, id }) => {
 						</button>
 					</Link>
 					<button
-						onClick={() =>
+						onClick={() => {
 							selector == "character"
-								? actions.addFavorite(character.name)
-								: actions.addFavorite(planet.name)
-						}
+								? actions.addFavorite(character.name, id, selector)
+								: actions.addFavorite(planet.name, id, selector);
+						}}
 						type="button"
 						className="btn btn-outline-warning float-end">
-						<i className="far fa-heart" />
+						<i className={`far fa-heart`} />
 					</button>
 				</div>
 			</div>

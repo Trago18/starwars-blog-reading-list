@@ -1,23 +1,36 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			favorites: [],
+			favorites: { name: [], id: [], sel: [], icon: "far" },
 			characters: [],
 			planets: []
 		},
 		actions: {
-			addFavorite: fav => {
-				if (getStore().favorites.includes(fav)) {
+			addFavorite: (fav, id, sel) => {
+				if (getStore().favorites.name.includes(fav)) {
 				} else {
-					setStore({ favorites: [...getStore().favorites, fav] });
+					setStore({
+						favorites: {
+							name: [...getStore().favorites.name, fav],
+							id: [...getStore().favorites.id, id],
+							sel: [...getStore().favorites.sel, sel]
+						}
+					});
 				}
 			},
 			removeFavorite: fav => {
-				const newFav = getStore().favorites.filter(value => {
+				const id = getStore().favorites.name.indexOf(fav);
+				const newFav = getStore().favorites.name.filter(value => {
 					return value !== fav;
 				});
+				const newId = getStore().favorites.id.filter((value, index) => {
+					return index !== id;
+				});
+				const newSel = getStore().favorites.sel.filter((value, index) => {
+					return index !== id;
+				});
 				//console.log(newFav);
-				setStore({ favorites: newFav });
+				setStore({ favorites: { name: newFav, id: newId, sel: newSel } });
 			},
 			loadData: () => {
 				fetch(`https://swapi.dev/api/people/`)

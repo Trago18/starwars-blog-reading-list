@@ -6,15 +6,17 @@ import { Context } from "../store/appContext";
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 
-	// href={`/${value[2]}/${value[1]}`}
+	let arr = store.favorites.name;
 
-	let arr = store.favorites;
 	let loop = arr.map((value, index) => {
 		return (
-			<li key={index}>
-				<a className="dropdown-item" href="#">
-					{value} <i onClick={() => actions.removeFavorite(value)} className="fas fa-trash"></i>
-				</a>
+			<li key={index} className="dropdown-item">
+				<Link
+					className="text-decoration-none"
+					to={`/${store.favorites.sel[index]}/${store.favorites.id[index]}`}>
+					{value}
+				</Link>
+				<i onClick={() => actions.removeFavorite(value)} className="fas fa-trash float-end mt-1"></i>
 			</li>
 		);
 	});
@@ -39,7 +41,7 @@ export const Navbar = () => {
 						Favorites <span className="badge bg-secondary">{num}</span>
 					</button>
 					<ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-						{loop}
+						{num == 0 ? <li className="dropdown-item">empty</li> : loop}
 					</ul>
 				</div>
 			</div>

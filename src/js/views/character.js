@@ -14,9 +14,7 @@ export const Character = () => {
 				</div>
 				<div className="col-md-6">
 					<div className="card-body text-center">
-						<h1 className="card-title">
-							{store.characters.length == 10 && store.characters[id].name}
-						</h1>
+						<h1 className="card-title">{store.characters.length > 0 && store.characters[id].name}</h1>
 						<p className="card-text h5">
 							Sed ut perspiciatis unde omnis iste natus error sit voliptatem accusantium doloremque
 							laudantium, totam rem aperiam, eaque ipsa quae ab illo iventore veritatis et quasi
@@ -37,7 +35,7 @@ export const Character = () => {
 					<div className="col">Eye Color</div>
 				</div>
 				<div className="row text-danger text-center">
-					{store.characters.length == 10 && (
+					{store.characters.length > 0 && (
 						<>
 							<div className="col">{store.characters[id].name}</div>
 							<div className="col">{store.characters[id].birth_year}</div>
