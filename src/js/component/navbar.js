@@ -13,7 +13,7 @@ export const Navbar = () => {
 			<li key={index} className="dropdown-item">
 				<Link
 					className="text-decoration-none"
-					to={`/${store.favorites.sel[index]}/${store.favorites.id[index]}`}>
+					to={`/${store.favorites.link[index][0]}/${store.favorites.link[index][2]}`}>
 					{value}
 				</Link>
 				<i onClick={() => actions.removeFavorite(value)} className="fas fa-trash float-end mt-1"></i>
